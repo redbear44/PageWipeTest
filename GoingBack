@@ -95,7 +95,8 @@ def newgame():
                 sys.exit()
 
 def creators():
-     while onCreators:
+    onCreators = True
+    while onCreators:
         onMain = False
         screen.fill(WHITE)
         screen.blit(PeterPic, (10, 10))
@@ -115,6 +116,7 @@ def creators():
             text = font.render("Back", True, BLACK)
             screen.blit(text, (85 - text.get_width(), 649 - text.get_height()))
             if click[0] == 1:
+                onCreators = False
                 mainScreen()
 
         pygame.display.update()
